@@ -6,6 +6,7 @@ import InputBase from "@mui/material/InputBase";
 import { alpha, styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Link from "next/link";
 import * as React from "react";
 
 const pages = ["Products", "Pricing", "Blog"];
@@ -78,11 +79,21 @@ export default function SearchAppBar() {
             Chained style props
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
-                {page}
+            <Link href="http://localhost:3001/" passHref={true}>
+              <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
+                {pages[0]}
               </Button>
-            ))}
+            </Link>
+            <Link href="http://ja.localhost:3001/" passHref={true}>
+              <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
+                {pages[0]}
+              </Button>
+            </Link>
+            <a href="http://ko.localhost:3001">
+              <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
+                {pages[0]}
+              </Button>
+            </a>
           </Box>
           <Search>
             <SearchIconWrapper>

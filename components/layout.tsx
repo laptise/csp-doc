@@ -14,7 +14,6 @@ export const Layout: FC<Props> = ({ title, children }) => {
       <SearchAppBar />
       <div className={styles.container}>
         <Header title={title} />
-        {children}
       </div>
       <main>{children}</main>
       <footer className={styles.footer}>
